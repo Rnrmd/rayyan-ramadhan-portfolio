@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply overflow-x-hidden bg-paper font-sans text-ink;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  main > section {
+    will-change: transform;
+    transform-origin: center center;
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto w-[88vw] py-[90px] sm:w-[min(1380px,90vw)] sm:py-[130px];
+  }
+  .label {
+    @apply font-mono text-[9px] tracking-[.1em];
+  }
+  .display {
+    @apply text-[clamp(43px,5vw,70px)] font-bold leading-[.98] tracking-[-.055em];
+  }
+  .display span {
+    @apply text-brand;
+  }
+  .btn-arrow {
+    @apply inline-flex items-center gap-6 px-[18px] py-[14px] text-[10px] uppercase tracking-[.08em] transition-all duration-300 hover:-translate-y-1;
+  }
+}
